@@ -2,12 +2,15 @@
 
 # Supply.
 
-# iOS application that enables users to donate and request essential items from their local community
+## iOS application that enables users to donate and request essential items from their local community
 
-# Built with UIKit, Firebase, SwiftUI, and Photos Framework
+## Built with UIKit, Firebase, SwiftUI, and Photos Framework
 
-## To run the demo, please clone the repo and run pod install on the directory. Make sure cocoapods is installed first.
-
+## To run the demo, please clone the repo and run 
+```
+pod install
+```
+## Make sure cocoapods is installed first.
 ### Made with ❤️ and ☕️ from California
 
 
