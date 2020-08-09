@@ -3,9 +3,16 @@
 we got the potential
 
 to distribute essentials :D
-# supply
+# supply-app
+
+
+## To run the demo, please clone the repo and run pod install on the directory. Make sure cocoapods is installed first.
+
+### Made with Love and Coffee from California
 
 
 
-## To Try It Out:
-### Clone the repo, and run pod install. Make sure to download cocoapods if you don't have it.
+
+
+
+
