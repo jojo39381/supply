@@ -1,8 +1,6 @@
 <img src="https://github.com/mbzhu1/supply-webs/blob/master/src/resources/supply.svg?raw=true" width="250">
 
-# Supply.
-
-## iOS application that enables users to donate and request essential items from their local community
+# iOS application that enables users to donate and request essential items from their local community
 
 ## Built with UIKit, Firebase, SwiftUI, and Photos Framework
 
