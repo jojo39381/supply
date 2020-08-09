@@ -4,3 +4,8 @@ we got the potential
 
 to distribute essentials :D
 # supply
+
+
+
+## To Try It Out:
+### Clone the repo, and run pod install. Make sure to download cocoapods if you don't have it.
