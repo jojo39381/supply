@@ -42,6 +42,8 @@ struct RequestDetail: View {
                                     .font(.headline)
                                 Spacer()
                                 
+                                
+                                
                             }
                             .padding(.top, 0)
                             .padding(.bottom, CGFloat(10.0))
