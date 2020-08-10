@@ -12,12 +12,15 @@ import CoreLocation
 struct Request: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
+    var nameDes: String
     var item: String
     var quantity: Int
-    fileprivate var imageName: String
-    fileprivate var coordinates: Coordinates
+    var imageName: String
+    var coordinates: Coordinates
     var state: String
     var city: String
+    var itemDes: String
+    var url: String
     //var category: Category
     var locationCoordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(
@@ -37,6 +40,9 @@ struct Request: Hashable, Codable, Identifiable {
         self.city = ""
         self.state = ""
         self.coordinates = Coordinates()
+        self.itemDes = ""
+        self.nameDes = ""
+        self.url = ""
     }
     
     init(id: Int, name: String, item: String, quantity: Int, imageName: String, latitude: Double, longitude: Double, city: String, state: String) {
@@ -49,6 +55,9 @@ struct Request: Hashable, Codable, Identifiable {
         self.city = city
         self.state = state
         self.coordinates = Coordinates(lat: latitude, long: longitude)
+        self.itemDes = ""
+        self.nameDes = ""
+        self.url = ""
         
     }
 

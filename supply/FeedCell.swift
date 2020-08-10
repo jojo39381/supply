@@ -35,6 +35,8 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
         
         
         
+        
+        
         collectionView.contentInset = .init(top: 50, left: 0, bottom: 0, right: 0)
         collectionView.scrollIndicatorInsets = .init(top: 50, left: 0, bottom: 0, right: 0)
         
@@ -48,16 +50,25 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return donationData.count
+        if type == "Donation" {
+            return requestData.count
+        }
+        else {
+            return donationData.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if type == "Donation" {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ItemCell
             cell.backgroundColor = .white
-            let item = donationData[indexPath.item]
+            print(indexPath.item)
+            print("/////")
+            print(requestData.count)
+            
+            let item = requestData[indexPath.item]
             cell.itemLabel.text = item.item
-            cell.locationLabel.text = item.city + " ," + item.state
+            cell.locationLabel.text = item.city + ", " + item.state
             cell.nameDes.text = item.nameDes
             cell.name.text = item.name
             cell.itemDescription.text = item.itemDes
@@ -70,7 +81,7 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
             cell.backgroundColor = .white
             let item = donationData[indexPath.item]
             cell.itemLabel.text = item.item
-            cell.locationLabel.text = item.city + " ," + item.state
+            cell.locationLabel.text = item.city + ", " + item.state
             cell.nameDes.text = item.nameDes
             cell.name.text = item.name
             cell.itemDescription.text = item.itemDes
@@ -80,11 +91,12 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
                 cell.imageView.image = image1
             }
             else {
-                let url = URL(string:item.url)!
-                if let data = try? Data(contentsOf: url)
-                {
-                    let image: UIImage = UIImage(data: data)!
-                    cell.imageView.image = image
+                if let url = URL(string:item.url) {
+                    if let data = try? Data(contentsOf: url)
+                    {
+                        let image: UIImage = UIImage(data: data)!
+                        cell.imageView.image = image
+                    }
                 }
             }
             return cell

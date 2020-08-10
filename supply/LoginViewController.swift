@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
     
     let emailTextField: UITextField = {
         let tf = UITextField()
+        tf.textColor = .black
         tf.placeholder = "Email"
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
@@ -41,6 +42,7 @@ class LoginViewController: UIViewController {
     
     let passwordTextField: UITextField = {
         let tf = UITextField()
+        tf.textColor = .black
         tf.placeholder = "Password"
         tf.isSecureTextEntry = true
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)

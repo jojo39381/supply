@@ -18,6 +18,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         return button
     }()
     
+    
+    
     @objc func handlePlusPhoto() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -47,7 +49,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
-        
+        tf.textColor = .black
         tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         
         return tf
@@ -71,6 +73,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
+        tf.textColor = .black
         tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
     }()
@@ -78,10 +81,12 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     let passwordTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Password"
+       
         tf.isSecureTextEntry = true
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
+        tf.textColor = .black
         tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
     }()
