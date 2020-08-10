@@ -94,6 +94,7 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         let label = UILabel()
         label.text = "What category?"
         label.textAlignment = .center
+        label.textColor = .black
         return label
     }()
     
@@ -102,6 +103,7 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         let label = UILabel()
         label.text = "Urgent?"
         label.textAlignment = .center
+        label.textColor = .black
         return label
     }()
     

@@ -17,7 +17,9 @@ class TabBarController: UITabBarController {
             print("lol")
             DispatchQueue.main.async {
                 let loginController = LoginViewController()
+                
                 let navController = UINavigationController(rootViewController: loginController)
+                navController.modalPresentationStyle = .fullScreen
                 self.present(navController, animated: true, completion: nil)
             }
             

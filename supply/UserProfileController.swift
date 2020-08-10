@@ -81,6 +81,7 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
                 //what happens? we need to present some kind of login controller
                 let loginController = LoginViewController()
                 let navController = UINavigationController(rootViewController: loginController)
+                navController.modalPresentationStyle = .fullScreen
                 self.present(navController, animated: true, completion: nil)
                 
             } catch let signOutErr {

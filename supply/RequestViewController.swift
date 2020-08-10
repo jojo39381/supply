@@ -85,6 +85,7 @@ class RequestViewController: UIViewController, UITableViewDelegate, UITableViewD
         let label = UILabel()
         label.text = "What category?"
         label.textAlignment = .center
+        label.textColor = .black
         return label
     }()
     
@@ -93,6 +94,7 @@ class RequestViewController: UIViewController, UITableViewDelegate, UITableViewD
         let label = UILabel()
         label.text = "Are you able to pick up your item?"
         label.textAlignment = .center
+        label.textColor = .black
         return label
     }()
     

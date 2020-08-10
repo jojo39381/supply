@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUI
 import Firebase
-class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, FeedDelegate{
+class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, FeedDelegate, UISearchBarDelegate{
     func presentView(donation: Donation) {
         print("haha")
         let hostingController = UIHostingController(rootView: DonationDetail(donation:donation))
@@ -21,7 +21,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         let hostingController = UIHostingController(rootView: RequestDetail(request:request))
         self.navigationController?.present(hostingController, animated: true, completion: nil)
     }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        
+    }
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
     var addButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .red
@@ -62,7 +74,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     var searchBar: UISearchBar = {
         let sb = UISearchBar()
         sb.searchBarStyle = .minimal
-    
+        
         
         
         
@@ -88,6 +100,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appearance = UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self])
+        appearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        searchBar.delegate = self
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.view.backgroundColor = UIColor.rgb(red: 85, green: 72, blue: 135)
         self.title = "Supply"
