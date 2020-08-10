@@ -16,11 +16,11 @@ A user can sign up or log in with an existing account on our iOS application.
 
 <img src="https://github.com/jojo39381/supply/blob/master/images/login.png?raw=true"
      alt="open with xcode image" 
-     width = "150"
+     width = "250"
      style="float: left; margin-right: 10px;" />
 <img src="https://github.com/jojo39381/supply/blob/master/images/signup.png?raw=true"
      alt="open with xcode image" 
-     width = "150"
+     width = "250"
      style="float: left; margin-right: 10px;" />
 
 
