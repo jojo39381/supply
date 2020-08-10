@@ -4,9 +4,17 @@
 
 Supply is an iOS application that enables users to donate and request essential items from their local community. Explore our landing page at https://supply-website.vercel.app/
 
+# why
+
+COVID19 has created a shortage of essential supplies such as masks, hand sanitizer, and even toilet paper. The current system of distributing these items to those is need is extremely inefficient. Often, individuals in need may rely on donations from an organization, and then that organization relies on donations from other individuals and so on. 
+
+The inefficiencies of this distribution chain leaves holes where some people lack supplies they desperately need while others have too much of that same item. Our application fills the gaps created by bureaucracy by enabling individuals to directly donate to other individuals
+
 # how it works
 
+A user signs for an account on our iOS application. The home page shows a feed of donations and requests, and each displays specific information about the item, quantity, and pickup location. 
 
+The user can make a new post
 
 # tech stack
 
@@ -23,11 +31,26 @@ The [landing page](https://supply-website.vercel.app/) was made using **React** 
 Our wireframes and color palette are documented in [Figma](https://www.figma.com/file/ZKLx5jHVJ6YfWGg2PPETNv/Supply)
 
 
-## To run the demo, please clone the repo and run 
+# download and clone this project locally
+
+### Method 1
+
+
+### Method 2
+Make sure you have **cocoapods** installed. If not you can install cocoapods with the following command
+```
+sudo gem install cocoapods
+```
+Clone the repository using the command 
+```
+git clone https://github.com/jojo39381/supply.git
+```
+After cloning the repository run the following command to install the required dependencies
 ```
 pod install
 ```
-## Make sure cocoapods is installed first.
+
+
 ### Made with ❤️ and ☕️ from California
 
 
