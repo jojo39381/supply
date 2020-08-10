@@ -20,6 +20,7 @@ class UserProfileHeader: UICollectionViewCell {
     var name: UILabel = {
         let label = UILabel()
         label.text = "Joseph Yeh"
+        label.textColor = .white
         label.font = label.font.withSize(20)
         return label
     }()
@@ -28,6 +29,8 @@ class UserProfileHeader: UICollectionViewCell {
     var nameDes : UILabel = {
         let label = UILabel()
         label.text = "Healthcare Partner"
+        label.textColor = .white
+        label.textColor = .white
         label.font = label.font.withSize(15)
         return label
     }()
@@ -41,8 +44,8 @@ class UserProfileHeader: UICollectionViewCell {
     let donations: UILabel = {
         
         let label = UILabel()
-        
-        let attributedText = NSMutableAttributedString(string: "12\n", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
+        label.textColor = .white
+        let attributedText = NSMutableAttributedString(string: "12\n", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)])
         
         attributedText.append(NSAttributedString(string: "Donations", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]))
         
@@ -56,8 +59,8 @@ class UserProfileHeader: UICollectionViewCell {
     let requests: UILabel = {
         
         let label = UILabel()
-        
-        let attributedText = NSMutableAttributedString(string: "50\n", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)])
+        label.textColor = .white
+        let attributedText = NSMutableAttributedString(string: "50\n", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)])
         
         attributedText.append(NSAttributedString(string: "Fulfilled Requests", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]))
         
@@ -71,13 +74,24 @@ class UserProfileHeader: UICollectionViewCell {
     
     let tracking : UIStackView = {
         let stackView = UIStackView()
+        
         return stackView
+    }()
+    
+    
+    let sub : UILabel = {
+        let view = UILabel()
+        view.text = "In Progress"
+        view.textColor = .black
+        view.font = UIFont.boldSystemFont(ofSize: 20)
+        view.textAlignment = .center
+        return view
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .white
+        backgroundColor = UIColor.rgb(red:85, green:72, blue:135)
         
         
        
@@ -104,10 +118,19 @@ class UserProfileHeader: UICollectionViewCell {
         sv2.addArrangedSubview(name)
         sv2.addArrangedSubview(nameDes)
         stack.addArrangedSubview(sv2)
+        stack.axis = .vertical
         stack.spacing = 20
+        stack.alignment = .leading
         
-        stack.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        tracking.anchor(top: stack.bottomAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
+        stack.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        tracking.anchor(top: self.topAnchor, left: nil, bottom: nil, right: self.rightAnchor
+            , paddingTop: 50, paddingLeft: 0, paddingBottom: 0, paddingRight: -10, width: 0, height: 0)
+        
+        self.addSubview(sub)
+        sub.anchor(top: stack.bottomAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        sub.backgroundColor = .white
+        
     }
     
     var user: User? {

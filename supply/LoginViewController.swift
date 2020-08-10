@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate{
     
     let logoContainerView: UIView = {
         let view = UIView()
@@ -62,6 +62,9 @@ class LoginViewController: UIViewController {
             loginButton.isEnabled = false
             loginButton.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
         }
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
     }
     
     let loginButton: UIButton = {
@@ -127,7 +130,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         view.addSubview(logoContainerView)
         logoContainerView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 500)
         

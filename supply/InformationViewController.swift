@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import Firebase
 class InformationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FormDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     var donation = Donation()
@@ -176,7 +177,33 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @objc func createNewDonation() {
+        postButton.isEnabled = false
+        let filename = NSUUID().uuidString
+        guard let image = photoButton.imageView?.image else {return}
+        guard let uploadData = image.jpegData(compressionQuality: 0.5) else {return}
+        let storageRef = Storage.storage().reference().child("posts").child(filename)
+        storageRef.putData(uploadData, metadata: nil, completion: { (metadata, err) in
+            
+            if let err = err {
+                self.postButton.isEnabled = true
+                print("Failed to upload profile image:", err)
+                return
+            }
+            
+            // Firebase 5 Update: Must now retrieve downloadURL
+            storageRef.downloadURL(completion: { (downloadURL, err) in
+                guard let profileImageUrl = downloadURL?.absoluteString else { return }
+                
+            print("Successfully uploaded profile image:", profileImageUrl)
+                self.saveToDatabaseWithUrl(imageUrl: profileImageUrl)
+                
+                
+        
+            })
+        })
+            
         donationDes["url"] = imageurl
+        
         for (key, value) in donationDes {
             switch key {
             case "name":
@@ -203,6 +230,23 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         self.dismiss(animated: true, completion: nil)
         
         
+    }
+    
+    func saveToDatabaseWithUrl(imageUrl: String) {
+         let name = donationDes["name"]
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        let userPostRef = Database.database().reference().child("posts").child(uid)
+        let ref = userPostRef.childByAutoId()
+        
+        donationDes["imageUrl"] = imageUrl
+        ref.updateChildValues(donationDes) { (err, ref) in
+            if let err = err {
+                self.postButton.isEnabled = true
+                print("failed")
+                return
+            }
+            print("successful")
+        }
     }
     
     var formArray = ["item", "quantity", "description"]
@@ -304,9 +348,13 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
                 {
                     print("haha")
                     let image: UIImage = UIImage(data: data)!
-                    self!.photoButton.setImage(image, for: .normal)
+                    
                 }
-
+            if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+                self?.photoButton.setImage(editedImage.withRenderingMode(.alwaysOriginal), for: .normal)
+            } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                self?.photoButton.setImage(originalImage.withRenderingMode(.alwaysOriginal), for: .normal)
+            }
             }
         }
     }
