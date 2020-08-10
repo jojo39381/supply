@@ -121,6 +121,8 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
     }
 }
 
+
+
 struct User {
     let username: String
     let profileImageUrl: String
