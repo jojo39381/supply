@@ -6,7 +6,9 @@ Supply is an iOS application that enables users to donate and request essential 
 
 # how it works
 
-#tech stack
+
+
+# tech stack
 
 We built the **iOS** application using **Swift** and **Xcode**.
 
@@ -18,7 +20,7 @@ The database is implemented in **Firestore** (currently in progress).
 
 The [landing page](https://supply-website.vercel.app/) was made using **React** and is hosted on **Vercel**
 
-Our wireframes and color palette are documented in [Figma](https://www.figma.com/)
+Our wireframes and color palette are documented in [Figma](https://www.figma.com/file/ZKLx5jHVJ6YfWGg2PPETNv/Supply)
 
 
 ## To run the demo, please clone the repo and run 
