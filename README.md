@@ -14,7 +14,7 @@ The inefficiencies of this distribution chain leaves holes where some people lac
 
 A user can sign up or log in with an existing account on our iOS application. 
 
-**Note: During login, the keyboard may not dismiss unless you click the "return" button
+**Note: During login, the keyboard may not dismiss unless you click the "return" button**
 
 <img src="https://github.com/jojo39381/supply/blob/master/images/login.png?raw=true"
      alt="open with xcode image" 
@@ -75,6 +75,7 @@ The new listing will be reflected on the home page and on the users profile
      style="float: left; margin-right: 10px;" />
 
 **Note:** the current version of the app doesn't support the camera
+
 **Hardware:** works best on iPhone 7 and above
 
 # tech stack
