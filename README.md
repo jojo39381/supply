@@ -46,7 +46,31 @@ When clicked, the listing will display specific information about the item, quan
      width = "250"
      style="float: left; margin-right: 10px;" />
 
-The user can make a new post
+The user can make a new listing and choose between a request and donation
+
+<img src="https://github.com/jojo39381/supply/blob/master/images/create-listing.png?raw=true"
+     alt="open with xcode image" 
+     width = "250"
+     style="float: left; margin-right: 10px;" />
+<img src="https://github.com/jojo39381/supply/blob/master/images/blank-listing.png?raw=true"
+     alt="open with xcode image" 
+     width = "250"
+     style="float: left; margin-right: 10px;" />
+<img src="https://github.com/jojo39381/supply/blob/master/images/filled-listing.png?raw=true"
+     alt="open with xcode image" 
+     width = "250"
+     style="float: left; margin-right: 10px;" />
+     
+The new listing will be reflected on the home page and on the users profile
+
+<img src="https://github.com/jojo39381/supply/blob/master/images/updated-home.png?raw=true"
+     alt="open with xcode image" 
+     width = "250"
+     style="float: left; margin-right: 10px;" />
+<img src="https://github.com/jojo39381/supply/blob/master/images/profile.png?raw=true"
+     alt="open with xcode image" 
+     width = "250"
+     style="float: left; margin-right: 10px;" />
 
 **Note:** the current version of the app doesn't support the camera
 
