@@ -33,7 +33,7 @@ Our wireframes and color palette are documented in [Figma](https://www.figma.com
 
 # download and clone this project locally
 
-### Method 1
+### method 1
 
 Click to the green code button on the top right of the repository and then click **Open with Xcode** 
 <img src="https://github.com/jojo39381/supply/blob/master/images/method1.png?raw=true"
@@ -43,7 +43,7 @@ Click to the green code button on the top right of the repository and then click
      
 If this method does not work, then try the second installation method below
 
-### Method 2
+### method 2
 Make sure you have **cocoapods** installed. If not you can install cocoapods with the following command
 ```
 sudo gem install cocoapods
