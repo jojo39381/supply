@@ -44,6 +44,14 @@ struct RequestDetail: View {
                                 
                                 
                                 
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
                             }
                             .padding(.top, 0)
                             .padding(.bottom, CGFloat(10.0))

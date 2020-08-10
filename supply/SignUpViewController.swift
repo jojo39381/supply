@@ -46,6 +46,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     let emailTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Email"
+        tf.attributedPlaceholder = NSAttributedString(string: "email",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
@@ -70,6 +72,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     let usernameTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Username"
+        tf.attributedPlaceholder = NSAttributedString(string: "username",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
@@ -81,7 +85,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     let passwordTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Password"
-       
+       tf.attributedPlaceholder = NSAttributedString(string: "password",
+       attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         tf.isSecureTextEntry = true
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect

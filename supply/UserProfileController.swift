@@ -49,8 +49,8 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
                 //print("Key \(key), Value: \(value)")
                 
                 guard let dictionary = value as? [String: Any] else { return }
-                
-                let post = Post(dictionary: dictionary)
+                guard let user = self.user else { return }
+                let post = Post(user: user, dictionary: dictionary)
                 
                 self.posts.append(post)
             })
@@ -142,30 +142,27 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
     var user: User?
     fileprivate func fetchUser() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            print(snapshot.value ?? "")
-            
-            guard let dictionary = snapshot.value as? [String: Any] else { return }
-            
-            self.user = User(dictionary: dictionary)
-            self.navigationItem.title = self.user?.username
-            
-            self.collectionView?.reloadData()
-        
-        }) { (err) in
-            print("Failed to fetch user:", err)
+           
+            Database.fetchUserWithUID(uid: uid) { (user) in
+                self.user = user
+                self.navigationItem.title = self.user?.username
+                
+                self.collectionView?.reloadData()
+            }
         }
-    }
+
 }
 
 
 
 struct User {
+    
+    let uid: String
     let username: String
     let profileImageUrl: String
     
-    init(dictionary: [String: Any]) {
+    init(uid: String, dictionary: [String: Any]) {
+        self.uid = uid
         self.username = dictionary["username"] as? String ?? ""
         self.profileImageUrl = dictionary["profileImageUrl"]  as? String ?? ""
     }
@@ -175,3 +172,17 @@ struct User {
 
 
 
+extension Database {
+    
+    static func fetchUserWithUID(uid: String, completion: @escaping (User) -> ()) {
+        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            guard let userDictionary = snapshot.value as? [String: Any] else { return }
+            let user = User(uid: uid, dictionary: userDictionary)
+            completion(user)
+            
+        }) { (err) in
+            print("Failed to fetch user for posts:", err)
+        }
+    }
+}

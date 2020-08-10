@@ -108,7 +108,7 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var height = frame.width/2.5
+        var height = frame.width/2
         if type != "Donation" {
             height = frame.width/1
         }

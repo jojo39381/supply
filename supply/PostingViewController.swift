@@ -88,7 +88,7 @@ class PostingViewController: UIViewController {
         
         
         titleLabel.anchor(top: sub.topAnchor, left: sub.leftAnchor, bottom: nil, right: sub.rightAnchor, paddingTop: 200, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        choice.anchor(top: titleLabel.bottomAnchor, left: sub.leftAnchor, bottom: nil, right: sub.rightAnchor, paddingTop: 100  , paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        choice.anchor(top: titleLabel.bottomAnchor, left: sub.leftAnchor, bottom: nil, right: sub.rightAnchor, paddingTop: 50  , paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         
         sub.addConstraint(NSLayoutConstraint(item: donateButton, attribute: .centerX, relatedBy: .equal, toItem: sub, attribute: .centerX, multiplier: 1, constant:-100))

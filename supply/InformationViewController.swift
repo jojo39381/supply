@@ -31,7 +31,7 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 220/3
+        return 180/3
         
     }
     
@@ -42,6 +42,8 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
     
     var form: UITableView = {
         let tv = UITableView()
+        tv.backgroundColor = .white
+        
         return tv
     }()
     var photoButton: UIButton = {
@@ -110,8 +112,10 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         button.backgroundColor = .black
         button.layer.cornerRadius = 15
         button.setTitle("Yes", for: .normal)
-        button.backgroundColor = UIColor.rgb(red: 220, green: 203, blue: 216)
         
+        button.setBackgroundColor(.purple, for: .selected)
+        button.setBackgroundColor(.purple, for: .highlighted)
+        button.setBackgroundColor(UIColor.rgb(red: 220, green: 203, blue: 216), for: .normal)
         return button
     }()
     var noButton: UIButton = {
@@ -119,7 +123,10 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         button.backgroundColor = .black
         button.layer.cornerRadius = 15
         button.setTitle("No", for: .normal)
-        button.backgroundColor = UIColor.rgb(red: 220, green: 203, blue: 216)
+        button.setBackgroundColor(.purple, for: .selected)
+        button.setBackgroundColor(.purple, for: .highlighted)
+        button.setBackgroundColor(UIColor.rgb(red: 220, green: 203, blue: 216), for: .normal)
+        
         return button
     }()
     func setupView() {
@@ -134,16 +141,16 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         categoryView.addSubview(noButton)
         photoButton.anchor(top: self.view.safeAreaLayoutGuide.topAnchor, left: self.view.leftAnchor, bottom: nil, right: self.view.rightAnchor, paddingTop: 10, paddingLeft: 120, paddingBottom: 0, paddingRight: -120, width: 0, height: 120)
         self.view.addSubview(form)
-        form.anchor(top: photoButton.bottomAnchor, left: self.view.leftAnchor, bottom: nil, right: self.view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: -20, width: 0, height: 220)
+        form.anchor(top: photoButton.bottomAnchor, left: self.view.leftAnchor, bottom: nil, right: self.view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: -20, width: 0, height: 180)
         question.anchor(top: categoryView.topAnchor, left: categoryView.leftAnchor, bottom: nil, right: categoryView.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         categoryStack.anchor(top: question.bottomAnchor, left: categoryView.leftAnchor, bottom: nil, right: categoryView.rightAnchor, paddingTop: 20, paddingLeft: 30, paddingBottom: 0, paddingRight: -30, width: 0, height: 40)
         
         
         urgent.anchor(top: categoryStack.bottomAnchor, left: categoryView.leftAnchor, bottom: nil, right: categoryView.rightAnchor, paddingTop: 30, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        yesButton.anchor(top: urgent.bottomAnchor, left: categoryView.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 100, paddingBottom: 0, paddingRight: 0, width: 70, height: 30)
+        yesButton.anchor(top: urgent.bottomAnchor, left: categoryView.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 60, paddingBottom: 0, paddingRight: 0, width: 70, height: 30)
         
-        noButton.anchor(top: urgent.bottomAnchor, left: nil, bottom: nil, right: categoryView.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: -100, width: 70, height: 30)
+        noButton.anchor(top: urgent.bottomAnchor, left: nil, bottom: nil, right: categoryView.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: -60, width: 70, height: 30)
         
         
         
@@ -401,5 +408,17 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         // Pass the selected object to the new view controller.
     }
     */
+
+}
+extension UIButton {
+
+  func setBackgroundColor(_ color: UIColor, for forState: UIControl.State) {
+    UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+    UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
+    UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+    let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    self.setBackgroundImage(colorImage, for: forState)
+  }
 
 }

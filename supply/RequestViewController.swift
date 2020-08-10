@@ -30,7 +30,7 @@ class RequestViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 220/3
+        return 180/3
         
     }
     
@@ -103,8 +103,10 @@ class RequestViewController: UIViewController, UITableViewDelegate, UITableViewD
         button.backgroundColor = .black
         button.layer.cornerRadius = 15
         button.setTitle("Yes", for: .normal)
-        button.backgroundColor = UIColor.rgb(red: 220, green: 203, blue: 216)
         
+        button.setBackgroundColor(.purple, for: .selected)
+        button.setBackgroundColor(.purple, for: .highlighted)
+        button.setBackgroundColor(UIColor.rgb(red: 220, green: 203, blue: 216), for: .normal)
         return button
     }()
     var noButton: UIButton = {
@@ -112,7 +114,10 @@ class RequestViewController: UIViewController, UITableViewDelegate, UITableViewD
         button.backgroundColor = .black
         button.layer.cornerRadius = 15
         button.setTitle("No", for: .normal)
-        button.backgroundColor = UIColor.rgb(red: 220, green: 203, blue: 216)
+        button.setBackgroundColor(.purple, for: .selected)
+        button.setBackgroundColor(.purple, for: .highlighted)
+        button.setBackgroundColor(UIColor.rgb(red: 220, green: 203, blue: 216), for: .normal)
+        
         return button
     }()
     func setupView() {
@@ -127,16 +132,16 @@ class RequestViewController: UIViewController, UITableViewDelegate, UITableViewD
         categoryView.addSubview(noButton)
     
         self.view.addSubview(form)
-        form.anchor(top: self.view.safeAreaLayoutGuide.topAnchor, left: self.view.leftAnchor, bottom: nil, right: self.view.rightAnchor, paddingTop: 100, paddingLeft: 20, paddingBottom: 0, paddingRight: -20, width: 0, height: 220)
+        form.anchor(top: self.view.safeAreaLayoutGuide.topAnchor, left: self.view.leftAnchor, bottom: nil, right: self.view.rightAnchor, paddingTop: 50, paddingLeft: 20, paddingBottom: 0, paddingRight: -20, width: 0, height: 180)
         question.anchor(top: categoryView.topAnchor, left: categoryView.leftAnchor, bottom: nil, right: categoryView.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         categoryStack.anchor(top: question.bottomAnchor, left: categoryView.leftAnchor, bottom: nil, right: categoryView.rightAnchor, paddingTop: 30, paddingLeft: 30, paddingBottom: 0, paddingRight: -30, width: 0, height: 40)
         
         
         urgent.anchor(top: categoryStack.bottomAnchor, left: categoryView.leftAnchor, bottom: nil, right: categoryView.rightAnchor, paddingTop: 40, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        yesButton.anchor(top: urgent.bottomAnchor, left: categoryView.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 100, paddingBottom: 0, paddingRight: 0, width: 70, height: 30)
+        yesButton.anchor(top: urgent.bottomAnchor, left: categoryView.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 60, paddingBottom: 0, paddingRight: 0, width: 70, height: 30)
         
-        noButton.anchor(top: urgent.bottomAnchor, left: nil, bottom: nil, right: categoryView.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: -100, width: 70, height: 30)
+        noButton.anchor(top: urgent.bottomAnchor, left: nil, bottom: nil, right: categoryView.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: -60, width: 70, height: 30)
         
         
         

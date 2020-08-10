@@ -7,15 +7,19 @@
 //
 
 import Foundation
-
 struct Post {
+    
+    let user: User
     let imageUrl: String
     let item: String
     let itemDes: String
-    init(dictionary: [String: Any]) {
+    
+    init(user: User, dictionary: [String: Any]) {
+        self.user = user
         self.imageUrl = dictionary["imageUrl"] as? String ?? ""
-        self.item = dictionary["item"] as? String ?? ""
-        self.itemDes = dictionary["description"] as? String ?? ""
+       
         
+        self.item = dictionary["item"] as? String ?? ""
+        self.itemDes = dictionary["itemDes"] as? String ?? ""
     }
 }

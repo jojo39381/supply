@@ -27,7 +27,7 @@ class FormCell: UITableViewCell, UITextFieldDelegate{
     }()
     var input: UITextField = {
         let tf = UITextField()
-        
+        tf.placeholder = "please fill in"
         return tf
         
     }()
@@ -51,6 +51,7 @@ class FormCell: UITableViewCell, UITextFieldDelegate{
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.backgroundColor = .white
         input.delegate = self
         input.addTarget(self, action: #selector(textFieldEditing), for: .editingChanged)
         self.addSubview(titleLabel)

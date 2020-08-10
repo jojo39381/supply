@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import Firebase
 class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, FeedDelegate{
     func presentView(donation: Donation) {
         print("haha")
@@ -109,7 +110,58 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         setupCollection()
         setupStack()
 
+        
+        
+        
+        
+        
+        
+        
+              
+        
+        
     }
+    
+    
+    
+       
+       
+       
+       
+       
+       
+   
+    
+    
+//
+//    fileprivate func fetchPosts() {
+//        guard let uid = Auth.auth().currentUser?.uid else { return }
+//
+//        Database.fetchUserWithUID(uid: uid) { (user) in
+//            self.fetchPostsWithUser(user: user)
+//        }
+//    }
+//
+//    fileprivate func fetchPostsWithUser(user: User) {
+//        let ref = Database.database().reference().child("posts").child(user.uid)
+//        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+//            guard let dictionaries = snapshot.value as? [String: Any] else { return }
+//
+//            dictionaries.forEach({ (key, value) in
+//                guard let dictionary = value as? [String: Any] else { return }
+//
+//                let post = Post(user: user, dictionary: dictionary)
+//
+//                self.posts.append(post)
+//            })
+//
+//
+//
+//        }) { (err) in
+//            print("Failed to fetch posts:", err)
+//        }
+//    }
+    
     func setupStack() {
         let button1 = makeButton(backgroundColor: UIColor.rgb(red: 255, green: 99, blue: 99), name: "medical")
         let button2 = makeButton(backgroundColor: UIColor.rgb(red: 203, green: 255, blue: 194), name: "hands")

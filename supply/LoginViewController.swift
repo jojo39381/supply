@@ -34,7 +34,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
-        
+        tf.attributedPlaceholder = NSAttributedString(string: "email",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         
         return tf
@@ -47,6 +48,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         tf.isSecureTextEntry = true
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
+        tf.attributedPlaceholder = NSAttributedString(string: "password",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         tf.font = UIFont.systemFont(ofSize: 14)
         tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
@@ -153,7 +156,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         stackView.distribution = .fillEqually
         
         view.addSubview(stackView)
-        stackView.anchor(top: logoContainerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 40, paddingBottom: 0, paddingRight: -40, width: 0, height: 140)
+        stackView.anchor(top: logoContainerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 40, paddingBottom: 0, paddingRight: -40, width: 0, height: 140)
     }
 }
 
