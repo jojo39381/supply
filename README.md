@@ -12,9 +12,11 @@ The inefficiencies of this distribution chain leaves holes where some people lac
 
 # how it works
 
+**1.5min video walkthrough: https://www.youtube.com/watch?v=NENve26Yf70**
+
 A user can sign up or log in with an existing account on our iOS application. 
 
-**Note: During login, the keyboard may not dismiss unless you click the "return" button.  Also, Camera functionalities does not work. Choose image from album instead.**
+Note: During login, the keyboard may not dismiss unless you click the "return" button.  Also, Camera functionalities does not work. Choose image from album instead.
 
 <img src="https://github.com/jojo39381/supply/blob/master/images/login.png?raw=true"
      alt="open with xcode image" 
