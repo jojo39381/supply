@@ -119,6 +119,17 @@ After cloning the repository run the following command to install the required d
 pod install
 ```
 
+# future plans
+Allow direct messaging between donors and requesters within the app rather than just sharing contact info
+
+Implement shipping and tracking so that users can donate anywhere in the world, not just their local community
+
+Develop inventory and logistics management for large donors or organizations
+
+Implement donation stats and achievements to promote social engagement
+
+Allow for group donations and requests to enable crowdfunding-like activity
+
 
 ### Made with ❤️ and ☕️ from California
 
