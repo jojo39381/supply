@@ -24,7 +24,18 @@ A user can sign up or log in with an existing account on our iOS application.
      style="float: left; margin-right: 10px;" />
 
 
-The home page shows a feed of donations and requests, and each displays specific information about the item, quantity, and pickup location. 
+The home page shows a feed of donations and requests.
+
+<img src="https://github.com/jojo39381/supply/blob/master/images/detail.png?raw=true"
+     alt="open with xcode image" 
+     width = "250"
+     style="float: left; margin-right: 10px;" />
+<img src="https://github.com/jojo39381/supply/blob/master/images/detail-white.png?raw=true"
+     alt="open with xcode image" 
+     width = "250"
+     style="float: left; margin-right: 10px;" />
+
+When clicked, the listing will display specific information about the item, quantity, and pickup location. 
 
 The user can make a new post
 
