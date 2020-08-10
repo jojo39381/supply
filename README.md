@@ -12,9 +12,23 @@ The inefficiencies of this distribution chain leaves holes where some people lac
 
 # how it works
 
-A user signs for an account on our iOS application. The home page shows a feed of donations and requests, and each displays specific information about the item, quantity, and pickup location. 
+A user can sign up or log in with an existing account on our iOS application. 
+
+<img src="https://github.com/jojo39381/supply/blob/master/images/login.png?raw=true"
+     alt="open with xcode image" 
+     width = "250"
+     style="float: left; margin-right: 10px;" />
+<img src="https://github.com/jojo39381/supply/blob/master/images/signup.png?raw=true"
+     alt="open with xcode image" 
+     width = "250"
+     style="float: left; margin-right: 10px;" />
+
+
+The home page shows a feed of donations and requests, and each displays specific information about the item, quantity, and pickup location. 
 
 The user can make a new post
+
+**Note:** the current version of the app doesn't support the camera
 
 # tech stack
 
