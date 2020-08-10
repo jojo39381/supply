@@ -38,6 +38,7 @@ Our wireframes and color palette are documented in [Figma](https://www.figma.com
 Click to the green code button on the top right of the repository and then click **Open with Xcode** 
 <img src="https://github.com/jojo39381/supply/blob/master/images/method1.png?raw=true"
      alt="open with xcode image" 
+     width = "50"
      style="float: left; margin-right: 10px;" />
      
 If this method does not work, then try the second installation method below
