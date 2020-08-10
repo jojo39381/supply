@@ -13,7 +13,11 @@ struct MapView: UIViewRepresentable {
     var coordinate: CLLocationCoordinate2D
 
     func makeUIView(context: Context) -> MKMapView {
-        MKMapView(frame: .zero)
+        let mapview = MKMapView(frame: .zero)
+        let annotation = CustomAnnotation()
+        annotation.coordinate = coordinate
+        mapview.addAnnotation(annotation)
+        return mapview
     }
 
     func updateUIView(_ uiView: MKMapView, context: Context) {
@@ -21,6 +25,18 @@ struct MapView: UIViewRepresentable {
         let region = MKCoordinateRegion(center: coordinate, span: span)
         uiView.setRegion(region, animated: true)
     }
+}
+
+class CustomAnnotation: NSObject, MKAnnotation {
+    
+    // This property must be key-value observable, which the `@objc dynamic` attributes provide.
+    @objc dynamic var coordinate = CLLocationCoordinate2D(latitude: 37.779_379, longitude: -122.418_433)
+    
+    // Required if you set the annotation view's `canShowCallout` property to `true`
+    var title: String? = NSLocalizedString("", comment: "custom annotation")
+    
+    // This property defined by `MKAnnotation` is not required.
+    var subtitle: String? = NSLocalizedString("", comment: "custom annotation")
 }
 
 struct MapView_Previews: PreviewProvider {
