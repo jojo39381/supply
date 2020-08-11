@@ -12,7 +12,7 @@ The inefficiencies of this distribution chain leaves holes where some people lac
 
 # how it works
 
-**2.5min video walkthrough: https://youtu.be/WqlYebiv6cA**
+**2.5min video walkthrough with voiceover: https://youtu.be/WqlYebiv6cA**
 
 A user can sign up or log in with an existing account on our iOS application. 
 
