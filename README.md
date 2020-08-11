@@ -12,7 +12,7 @@ The inefficiencies of this distribution chain leaves holes where some people lac
 
 # how it works
 
-**1.5min video walkthrough: https://www.youtube.com/watch?v=NENve26Yf70**
+**2.5min video walkthrough: https://youtu.be/WqlYebiv6cA**
 
 A user can sign up or log in with an existing account on our iOS application. 
 
@@ -121,7 +121,7 @@ After cloning the repository run the following command to install the required d
 pod install
 ```
 
-# future plans
+# [future plans](https://youtu.be/ZreE2mAUVVE)
 1. Allow direct messaging between donors and requesters within the app rather than just sharing contact info
 
 2. Implement shipping and tracking so that users can donate anywhere in the world, not just their local community
